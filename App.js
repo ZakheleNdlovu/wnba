@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
   box: {
     paddingTop: 27,
     height: '100%',
-    backgroundColor: 'orange',
+    backgroundColor: 'gray',
 
   }
 })

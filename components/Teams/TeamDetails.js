@@ -1,6 +1,6 @@
-import { View, Text } from 'react-native'
+import { View, Text, Button, TouchableOpacity } from 'react-native'
 import React, { useEffect, useState } from 'react'
-import { useRoute } from '@react-navigation/native'
+import { useNavigation, useRoute } from '@react-navigation/native'
 import Header from './TeamDetailsF/Header'
 import Statistics from './TeamDetailsF/Statistics'
 import Footer from '../Footer'
@@ -10,7 +10,7 @@ const TeamDetails = () => {
     const [details, setDetails] = useState([])
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(true)
-
+    const navigation = useNavigation()
     const route = useRoute()
     const { item } = route.params
 
@@ -28,7 +28,7 @@ const TeamDetails = () => {
             }
         }
         fetchStats()
-    }, [])
+    }, [navigation])
 
     if (loading) {
         return (
@@ -53,6 +53,9 @@ const TeamDetails = () => {
             </View>
             <View style={{ height: '43%' }}>
                 <Statistics item={details} />
+                <TouchableOpacity onPress={() => navigation.goBack()} style={{ width: 60, backgroundColor: 'black', alignItems: 'center', justifyContent: 'center', alignSelf: 'center', marginTop: 5 }}>
+                    <Text style={{ fontSize: 18, padding: 5, color: 'white', fontWeight: 'bold' }}>Back</Text>
+                </TouchableOpacity>
             </View>
             <Footer />
         </View>

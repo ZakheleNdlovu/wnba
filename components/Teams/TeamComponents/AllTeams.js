@@ -6,11 +6,8 @@ const AllTeams = ({ teams, navigation }) => {
     return (
         <View>
             <FlatList data={teams} renderItem={({ item }) => {
-                function load() {
-                    navigation.preload('Team-Details', { item: item })
-                }
+
                 if (item.team.logos[0]) {
-                    load()
                     return (
                         <TouchableOpacity onPress={() => {
                             navigation.navigate('Team-Details', { item: item })

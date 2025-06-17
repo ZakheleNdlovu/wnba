@@ -29,7 +29,7 @@ const Events = () => {
             }
         }
         fetchData()
-    }, [])
+    }, [navigation])
 
     if (loading) {
         return <Text>loading</Text>

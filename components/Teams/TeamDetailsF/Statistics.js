@@ -5,6 +5,7 @@ const Statistics = ({ item }) => {
     if (item) {
         return (
             <View style={styles.box}>
+                <Text style={{ fontSize: 17, fontWeight: 'bold', alignSelf: 'center' }}>Season Statistics</Text>
                 <View style={styles.container}>
                     <View style={{ alignItems: 'center', width: '16%' }}>
                         <Text>{item.categories[1].stats[31].abbreviation}</Text>
