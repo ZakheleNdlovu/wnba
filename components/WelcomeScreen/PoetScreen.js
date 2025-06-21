@@ -1,12 +1,12 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-const StatsRow = () => {
+const PoetScreen = () => {
     return (
         <View>
-            <Text>StatsRow</Text>
+            <Text>PoetScreen</Text>
         </View>
     )
 }
 
-export default StatsRow
+export default PoetScreen
