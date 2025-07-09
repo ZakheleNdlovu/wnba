@@ -1,10 +1,11 @@
-import { View, Text, StyleSheet, ScrollView } from 'react-native'
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native'
 import React from 'react'
-import { useRoute } from '@react-navigation/native'
+import { useRoute, useNavigation } from '@react-navigation/native'
 
 const Details = () => {
     const route = useRoute()
     const { item } = route.params
+    const navigation = useNavigation()
     return (
         <View>
             <View style={styles.header}>
@@ -23,6 +24,11 @@ const Details = () => {
                 })}
                 <View style={{ height: 40, width: '99%', alignItems: 'flex-end', justifyContent: 'flex-end', padding: 4 }}>
                     <Text>Line count : {item.linecount}</Text>
+                </View>
+                <View>
+                    <TouchableOpacity onPress={() => navigation.goBack()} style={{ width: 100, height: 40, backgroundColor: 'darkslategray', alignItems: 'center', justifyContent: 'center', alignSelf: 'center', borderRadius: 10, marginBottom: 5 }}>
+                        <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>Go Back</Text>
+                    </TouchableOpacity>
                 </View>
             </ScrollView>
         </View>

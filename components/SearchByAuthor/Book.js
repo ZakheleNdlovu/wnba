@@ -17,13 +17,15 @@ const Book = () => {
                 <Text style={{ alignSelf: 'flex-end' }}>{item.author}</Text>
             </View>
             <ScrollView style={{ padding: 2, height: '90%' }}>
-                {item.lines.map((line, _) => {
-                    return (
-                        <View key={_} style={{ width: '99%', alignSelf: 'center', padding: 2 }}>
-                            <Text>{line}</Text>
-                        </View>
-                    )
-                })}
+                <View style={{ boxshadowcolor: '#000', borderRadius: 10, width: '98%', alignSelf: 'center', padding: 10, marginBottom: 5, backgroundColor: 'white', shadowColor: '#000', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.25, shadowRadius: 3.84, elevation: 5 }}>
+                    {item.lines.map((line, _) => {
+                        return (
+                            <View key={_} style={{ width: '99%', alignSelf: 'center', padding: 2 }}>
+                                <Text>{line}</Text>
+                            </View>
+                        )
+                    })}
+                </View>
                 <View style={{ height: 50, width: '99%', alignItems: 'flex-end', justifyContent: 'flex-end', padding: 4, marginBottom: 10 }}>
                     <Text style={{ textDecorationLine: 'underline', color: 'darkslategray' }}>Line count : {item.linecount}</Text>
                 </View>

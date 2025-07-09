@@ -38,23 +38,23 @@ const HomeScreen = () => {
     return (
         <View>
             <View style={{ height: '8%' }}>
-                <View style={{ height: 50, backgroundColor: 'lightgray', alignItems: 'center', justifyContent: 'center', flexDirection: 'row', borderColor: 'gray', borderWidth: 1, width: '98%', alignSelf: 'center', marginBottom: 4, borderRadius: 10 }}>
+                <View style={{ height: 50, alignItems: 'center', justifyContent: 'center', flexDirection: 'row', borderColor: 'gray', borderWidth: 1, width: '98%', alignSelf: 'center', marginBottom: 4, borderRadius: 10 }}>
                     <View style={{ overflow: 'hidden', borderRadius: 10, borderColor: 'gray', borderWidth: 1 }}>
                         <TextInput style={{ width: 230, height: 35, backgroundColor: 'white' }} placeholder='Search by Poet...' onChangeText={(value) => setSearch(value)} />
                     </View>
 
                 </View>
             </View>
-            <ScrollView style={{ height: '91.5%', borderRadius: 10, borderColor: 'gray', borderWidth: 1, width: '98%', alignSelf: 'center', marginBottom: 4 }}>
+            <ScrollView style={{ height: '91.5%', borderRadius: 10, width: '98%', alignSelf: 'center', marginBottom: 4 }}>
                 {author.map((auth, key) => {
-                    if (auth.includes(search)) {
+                    if (auth.toLowerCase().includes(search.toLowerCase())) {
                         return (
-                            <TouchableOpacity key={key} onPress={() => navigation.navigate('Author', { item: auth })} style={{ padding: 5, borderBottomColor: 'gray', borderBottomWidth: 1 }}>
+                            <TouchableOpacity key={key} onPress={() => navigation.navigate('Author', { item: auth })} style={{ padding: 10, marginBottom: 5, backgroundColor: 'white', borderRadius: 10, shadowColor: '#000', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.25, shadowRadius: 3.84, elevation: 5, alignItems: 'center' }}>
                                 <View style={{ padding: 5 }}>
-                                    <View key={key} style={{ borderLeftColor: 'black', borderBottomColor: 'gray', borderBottomWidth: 1, padding: 4, marginBottom: 2, borderTopColor: 'lightgray', borderTopWidth: 1 }}>
+                                    <View key={key} style={{ borderLeftColor: 'black', borderBottomColor: 'gray', padding: 4, marginBottom: 2, borderTopColor: 'lightgray', width: '98%', alignItems: 'center' }}>
                                         <Text style={{ fontSize: 18, fontWeight: 'bold' }}>{auth}</Text>
 
-                                        <TouchableOpacity onPress={() => navigation.navigate('Author', { item: auth })} style={{ width: 70, height: 30, borderColor: 'black', borderWidth: 1, alignItems: 'center', justifyContent: 'center', alignSelf: 'flex-end' }}>
+                                        <TouchableOpacity onPress={() => navigation.navigate('Author', { item: auth })} style={{ boxshadowcolor: '#000', elevation: 5, borderRadius: 10, backgroundColor: 'lightgray', alignItems: 'center', justifyContent: 'center', width: 100, height: 30, marginTop: 5 }}>
                                             <Text>See Poems</Text>
                                         </TouchableOpacity>
                                     </View>
