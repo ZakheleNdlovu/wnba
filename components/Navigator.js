@@ -11,6 +11,7 @@ import HomeScreen from './SearchByAuthor/HomeScreen'
 import Read from './SearchByAuthor/Read'
 import Book from './SearchByAuthor/Book'
 import Header from './Header'
+import Poets from './WelcomeScreen/Poets'
 
 const Stack = createStackNavigator()
 const Drawer = createDrawerNavigator()
@@ -40,6 +41,7 @@ function StackNavigator1() {
         <Stack.Navigator>
             <Stack.Screen name='All' component={Welcome} options={{ headerShown: false }} />
             <Stack.Screen name='Read' component={Details} options={{ headerShown: false }} />
+            <Stack.Screen name='Autha' component={Read} options={{ headerShown: false }} />
         </Stack.Navigator>
     )
 }

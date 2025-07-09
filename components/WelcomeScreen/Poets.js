@@ -40,7 +40,7 @@ const Poets = () => {
                     if (auth.toLowerCase().includes(search.toLowerCase())) {
                         return (
                             <View key={key} style={{ padding: 5 }}>
-                                <TouchableOpacity>
+                                <TouchableOpacity onPress={() => navigation.navigate('Autha', { item: auth })}>
                                     <View style={{ boxShadow: '0 4px 8px rgba(0,0,0,0.2)', borderRadius: 10, borderColor: 'gray', borderWidth: 1, padding: 10, marginBottom: 5 }}>
                                         <Text style={{ fontSize: 18, fontWeight: 'bold' }}>{auth}</Text>
 
